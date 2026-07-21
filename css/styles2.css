@@ -1,0 +1,82 @@
+@charset "utf-8";
+/*======================
+  main2
+======================*/
+.main2 {
+  /* boxmodel */
+    padding-top: 200px;
+}
+
+dl {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+dt {
+  width: 30%;
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+  background-color: #DADADA;
+}
+
+dd {
+  width: 70%;
+  padding-bottom: 20px;
+  background-color: #F3F3F3;
+  margin-bottom: 10px;
+}
+
+/* モーダル背景（画面全体を覆う黒い半透明の膜） */
+.modal-overlay {
+  display: none; /* 最初は非表示 */
+  position: fixed; /* 画面に固定 */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7); /* 半透明の黒 */
+  z-index: 1000; /* 他の要素より一番上に表示 */
+  justify-content: center;
+  align-items: center;
+}
+
+/* モーダルの中身（白いカード部分） */
+.modal-content {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.modal-desc {
+  margin-top: 20px;
+  text-align: left;
+  line-height: 1.6;
+}
+
+/* 閉じるボタン（×） */
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.modal-close:hover {
+  color: #000;
+}

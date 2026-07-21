@@ -1,0 +1,531 @@
+@charset "utf-8";
+/*======================
+  Header
+======================*/
+.header {
+  position: relative;
+  width: 100%;
+}
+
+/* nav */
+.header-site-menu {
+  /* layout */
+  position: fixed; /* 上部に固定 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10; /* 重なり順を指定-最前面- */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* boxmodel */
+  padding: 24px 40px;
+  box-sizing: border-box;
+  /* visual */
+  background: rgba(255, 255, 255); /* 透過しない */
+  box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.1);
+}
+
+.header-site-menu img {
+  /* layout */
+  vertical-align: middle;
+  /* boxmodel */
+  margin-right: auto;
+}
+
+.header-logo {
+  /* layout */
+  display: flex;
+  align-items: center;
+}
+
+.site-menu {
+  /* layout */
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.site-menu ul {
+  /* layout */
+  display: flex;
+  gap: 40px;
+  /* visual */
+  font: var(--regular-24px);
+  font-weight: bold;
+}
+
+.site-menu ul li:hover {
+  text-decoration: underline;
+}
+
+.menu-sub {
+  display: none;
+}
+
+/* button */
+.flat-button {
+  padding: 10px 48px;
+  border-radius: 50px;
+  text-align: center;
+  color: white;
+  background: steelblue;
+  font: var(--regular-24px);
+}
+
+.flat-button:hover {
+  opacity: 0.8;
+}
+
+.toggle-menu-button {
+  display: none;
+}
+
+/* スマホ用 */
+@media screen and (max-width: 768px) {
+  .toggle-menu-button {
+    /* layout */
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    background-image: url("../images/Vecter.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    outline: none;
+  }
+
+  .site-menu {
+    /* layout */
+    display: none; /* 初期状態は非表示 */
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* ヘッダーのすぐ下に配置 */
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95); /* 下のコンテンツが透けないように背景色を指定 */
+    padding: 40px;
+    box-sizing: border-box;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1); /* メニューの下にうっすら影をつける */
+    gap: 40px; /* メニュー内の項目とボタンの隙間 */
+  }
+
+  .site-menu ul {
+    flex-direction: column;
+    gap: 64px;
+  }
+
+  .site-menu ul li {
+    font: var(--regular-32px);
+  }
+
+  .menu-sub {
+    display: block;
+    font: var(--regular-16px);
+    color: steelblue;
+  }
+}
+
+/* ヒーローイメージ画像 */
+.hero-image {
+  width: 100%;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100vh; /* 画面いっぱいに表示 */
+  object-fit: cover; /* 比率を保ちながらトリミング */
+}
+
+.hero-content {
+  /* layout */
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* 原点を中央にする */
+  gap: 16px;
+  /* boxmodel */
+  width: 100%;
+  /* visual */
+  color: white;
+  /* animation */
+  opacity: 0;
+  filter: blur(10px);
+  animation: fadeBlur 0.6s ease forwards;
+}
+
+.hero-content h1 {
+  font: var(--bold-48px);
+}
+
+.hero-content p {
+  font: var(--regular-24px);
+}
+
+@keyframes fadeBlur {
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.hero-guide img {
+  /* layout */
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  top: 70%;
+  left: 50%;
+  gap: 16px;
+  /* animation */
+  opacity: 0;
+  transform: translate(-50%, 40px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 5;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* ==========================
+    共通
+============================*/
+main {
+  /* layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  /* boxmodel */
+  padding-top: 20px;
+}
+
+.title {
+  /* layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  /* boxmodel */
+  margin-bottom: 30px;
+}
+
+.title h2 {
+  font: var(--bold-48px);
+  color: black;
+}
+
+.title p {
+  font: var(--bold-14px);
+  color: steelblue;
+}
+
+/* ===========================
+    Service
+============================ */
+/* 共通の設定 */
+#Service {
+  /* layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* boxmodel */
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* スマホ用:授業内基準のものにする */
+@media screen and (max-width: 768px) {
+  #Service {
+    width: 100%;
+  }
+}
+
+#skills {
+  /* layout */
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  /* boxmodel */
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  #skills {
+    flex-wrap: wrap;
+  }
+}
+
+.skills-item {
+  /* layout */
+  display: flex;
+  align-items: center;
+  gap: 100px;
+}
+
+@media screen and (max-width: 768px) {
+  .skills-item {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.skills-text {
+  /* layout */
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  /* visual */
+  color: white;
+}
+
+.skills-text h3 {
+  font: var(--bold-24px);
+}
+
+@media screen and (max-width: 768px) {
+  .skills-text h3 {
+    text-align: center;
+  }
+}
+
+.skills-text p {
+  font: var(--regular-14px);
+  line-height: 1.8;
+}
+
+/* 各項目の共通設定 */
+#graphicdesign,
+#webdesign,
+#projectplanning {
+  /* layout */
+  display: flex;
+  /* boxmodel */
+  width: 90%; /* 画面幅に対して85%の幅 */
+  padding: 62px 128px 61px 129px;
+  box-sizing: border-box;
+  /* visual */
+  background: steelblue;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* 各配置設定 */
+#graphicdesign,
+#projectplanning {
+  align-self: flex-start; /* 左寄せ */
+  border-radius: 0 10px 10px 0;
+}
+
+#webdesign {
+  align-self: flex-end; /* 右寄せ */
+  border-radius: 10px 0 0 10px;
+}
+
+@media screen and (max-width: 768px) {
+  #graphicdesign,
+  #webdesign,
+  #projectplanning {
+    width: 100%;
+    padding: 40px;
+  }
+}
+/* =========================
+    Works
+========================= */
+#Works {
+  /* layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* boxmodel */
+  width: 100%;
+  max-width: 100%;
+}
+
+.portfolio-container {
+  /* layout */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  justify-items: center;
+  /* boxmodel */
+  padding: 35px;
+  width: 100%;
+}
+
+.portfolio-item {
+  /* layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  /* boxmodel */
+  padding: 52px 39px;
+  box-sizing: border-box;
+  width: 100%;
+  /* visual */
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 4px 15px rgba(70, 130, 180, 0.15);
+}
+
+.item-thumbnail {
+  /* layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 35px;
+  /* boxmodel */
+  width: 100%;
+}
+
+.item-thumbnail img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  /* visual */
+  border-radius: 10px;
+}
+
+.item-thumbnail p {
+  font: var(--regular-24px);
+  color: black;
+}
+
+.item-tag {
+  /* layout */
+  text-align: center;
+  /* boxmodel */
+  width: 50%;
+  padding: 8px 0;
+  /* visual */
+  border-radius: 10px;
+  background: steelblue;
+  color: white;
+  font: var(--regular-14px);
+}
+
+/* スマホ時は横スクロール */
+@media screen and (max-width: 768px) {
+  .portfolio-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .portfolio-item {
+    min-width: 300px; /* 最小幅 */
+    flex-shrink: 0; /* 縮小しない */
+  }
+}
+
+/* View All ボタン */
+.view-all-wrapper {
+  margin-top: 20px;
+}
+
+.view-all-btn {
+  /* layout */
+  display: inline-block;
+  /* boxmodel */
+  padding: 12px 50px;
+  /* visual */
+  border-radius: 50px;
+  background: steelblue;
+  color: white;
+  font: var(--regular-16px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  /* animation */
+  transition: opacity 0.3s;
+}
+
+.view-all-btn:hover {
+  opacity: 0.8;
+}
+
+/* =======================
+  About
+======================= */
+#About {
+  /* layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+  align-self: stretch;
+  /* boxmodel */
+  padding: 80px 10px 120px 10px;
+  /* visual */
+  background: lightsteelblue;
+}
+
+#about-item {
+  /* layout */
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  /* boxmodel */
+  max-width: 900px;
+  width: 100%;
+}
+
+#about-item img {
+  width: 200px;
+  height: 200px;
+}
+
+#about-text {
+  /* layout */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+#about-text h3 {
+  font: var(--regular-32px);
+  color: black;
+}
+
+#about-text p {
+  font: var(--regular-16px);
+  color: black;
+  line-height: 1.8;
+}
+
+@media screen and (max-width: 768px) {
+  #about-item {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 40px;
+  }
+}
+
+/* footer */
+.footer {
+  /* layout */
+  display: flex;
+  justify-content: center;
+  /* boxmodel */
+  padding: 20px;
+  /* visual */
+  background: steelblue;
+  color: white;
+  font: var(--regular-14px);
+}
+
+/* 修正：スマホ表示時のメニュー崩れ防止のため、.site-menu.is-show に変更し display: flex に設定 */
+.site-menu.is-show {
+  display: flex;
+}
