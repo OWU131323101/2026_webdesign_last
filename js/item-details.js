@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 2. 閉じるボタン(×)をクリックしたときの処理
+  // 閉じるボタン(×)をクリックしたときの処理
   closeBtn.addEventListener('click', () => {
     modal.style.display = 'none';
   });
