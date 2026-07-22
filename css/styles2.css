@@ -40,9 +40,9 @@
     gap: 40px;
     margin-bottom: 30px;
     border-radius: 12px;
-    border: 1px solid #e0e0e0;
+    border: 1px solid var(--gray-light);
     /* visual */
-    background: #ffffff;
+    background: var(--white);
     box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.1);
 }
 
@@ -61,8 +61,8 @@
 
 .work-tag {
     display: inline-block;
-    background-color: #4a90e2;
-    color: #fff;
+    background-color: var(--steelblue);
+    color: var(--white);
     padding: 4px 12px;
     border-radius: 4px;
     font-size: 0.85rem;
@@ -71,13 +71,13 @@
 
 .work-description {
     line-height: 1.7;
-    color: #666666;
+    color: var(--gray-dark);
     margin: 0;
 }
 
 .work-info {
     font-size: 0.9rem;
-    color: #888888;
+    color: var(--gray-medium);
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -131,12 +131,12 @@
 }
 
 .thumbnail.active {
-    border-color: #4a90e2;
+    border-color: var(--steelblue);
     transform: scale(1.05);
 }
 
 .nav-btn {
-    background: #f0f0f0;
+    background: var(--offwhite);
     border: none;
     width: 40px;
     height: 40px;
@@ -150,7 +150,7 @@
 }
 
 .nav-btn:hover {
-    background: #e0e0e0;
+    background: var(--gray-light);
 }
 
 /* レスポンシブデザイン（スマホ：写真が上、説明文が下） */
@@ -183,7 +183,7 @@
 #Contact .Office,
 #Contact .contact-mail {
     width: 100%;
-    background: white;
+    background: var(--white);
     border-radius: 20px;
     box-shadow: 0 12px 30px rgba(70, 130, 180, 0.12);
     padding: 40px;
@@ -195,7 +195,7 @@
 #Contact .Office iframe {
     width: 100%;
     min-height: 360px;
-    border: 1px solid #d8d8d8;
+    border: 1px solid var(--gray-light);
     border-radius: 16px;
 }
 
@@ -208,7 +208,7 @@
 #Contact .Office p,
 #Contact .contact-mail p {
     font: var(--regular-18px);
-    color: #333333;
+    color: var(--gray-darker);
     line-height: 1.8;
 }
 

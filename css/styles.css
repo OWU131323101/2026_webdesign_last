@@ -22,7 +22,7 @@
   padding: 24px 40px;
   box-sizing: border-box;
   /* visual */
-  background: rgba(255, 255, 255); /* 透過しない */
+  background: var(--white);
   box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.1);
 }
 
@@ -55,8 +55,28 @@
   font-weight: bold;
 }
 
-.site-menu ul li:hover {
-  text-decoration: underline;
+.site-menu ul li {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.site-menu ul li::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s ease;
+}
+
+.site-menu ul li.is-hovered::after {
+  width: 100%;
+  opacity: 1;
 }
 
 .menu-sub {
@@ -71,8 +91,8 @@
   padding: 10px 48px;
   border-radius: 50px;
   /* visual */
-  color: white;
-  background: steelblue;
+  color: var(--white);
+  background: var(--steelblue);
   font: var(--regular-24px);
 }
 
@@ -81,7 +101,7 @@
 }
 
 .site-menu .current {
-  background: #2f5596;
+  background: var(--darksteelblue);
 }
 
 .site-menu .current:hover {
@@ -121,7 +141,7 @@
     padding: 40px;
     box-sizing: border-box;
     /* visual */
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--white-translucent);
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
     gap: 40px;
   }
@@ -132,6 +152,9 @@
   }
 
   .site-menu ul li {
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 0.5em; 
     font: var(--regular-32px);
   }
 
@@ -140,7 +163,7 @@
     display: block;
     font: var(--regular-16px);
     /* visual */
-    color: steelblue;
+    color: var(--steelblue);
   }
 }
 
@@ -168,7 +191,7 @@
   /* boxmodel */
   width: 100%;
   /* visual */
-  color: white;
+  color: var(--white);
   /* animation */
   opacity: 0;
   filter: blur(10px);
@@ -237,15 +260,15 @@ main {
 
 .title h2 {
   font: var(--bold-48px);
-  color: black;
+  color: var(--black);
 }
 
 .title p {
   font: var(--bold-14px);
-  color: steelblue;
+  color: var(--steelblue);
 }
 
-/* ===========================
+/* =========================== 
     Service
 ============================ */
 /* 共通の設定 */
@@ -288,10 +311,35 @@ main {
   gap: 100px;
 }
 
+.skills-item.reveal {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.skills-item.reveal.reveal-left {
+  transform: translateX(-80px);
+}
+
+.skills-item.reveal.reveal-right {
+  transform: translateX(80px);
+}
+
+.skills-item.reveal.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 @media screen and (max-width: 768px) {
   .skills-item {
     flex-direction: column;
     gap: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills-item.reveal {
+    transition: none;
   }
 }
 
@@ -301,7 +349,7 @@ main {
   flex-direction: column;
   gap: 24px;
   /* visual */
-  color: white;
+  color: var(--white);
 }
 
 .skills-text h3 {
@@ -330,8 +378,15 @@ main {
   padding: 62px 128px 61px 129px;
   box-sizing: border-box;
   /* visual */
-  background: steelblue;
+  background-color: var(--steelblue-15);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.8s ease, box-shadow 0.8s ease;
+}
+
+#graphicdesign.is-visible,
+#webdesign.is-visible,
+#projectplanning.is-visible {
+  background-color: var(--steelblue);
 }
 
 /* 各配置設定 */
@@ -391,7 +446,7 @@ main {
   width: 100%;
   /* visual */
   border-radius: 20px;
-  background: white;
+  background: var(--white);
   box-shadow: 0 4px 15px rgba(70, 130, 180, 0.15);
 }
 
@@ -415,7 +470,7 @@ main {
 
 .item-thumbnail p {
   font: var(--regular-24px);
-  color: black;
+  color: var(--black);
 }
 
 .item-tag {
@@ -426,8 +481,8 @@ main {
   padding: 8px 0;
   /* visual */
   border-radius: 10px;
-  background: steelblue;
-  color: white;
+  background: var(--steelblue);
+  color: var(--white);
   font: var(--regular-14px);
 }
 
@@ -458,8 +513,8 @@ main {
   padding: 12px 50px;
   /* visual */
   border-radius: 50px;
-  background: steelblue;
-  color: white;
+  background: var(--steelblue);
+  color: var(--white);
   font: var(--regular-16px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   /* animation */
@@ -483,7 +538,7 @@ main {
   /* boxmodel */
   padding: 80px 10px 120px 10px;
   /* visual */
-  background: lightsteelblue;
+  background: var(--lightsteelblue);
 }
 
 #about-item {
@@ -511,12 +566,12 @@ main {
 
 #about-text h3 {
   font: var(--regular-32px);
-  color: black;
+  color: var(--black);
 }
 
 #about-text p {
   font: var(--regular-16px);
-  color: black;
+  color: var(--black);
   line-height: 1.8;
 }
 
@@ -536,8 +591,8 @@ main {
   /* boxmodel */
   padding: 20px;
   /* visual */
-  background: steelblue;
-  color: white;
+  background: var(--steelblue);
+  color: var(--white);
   font: var(--regular-14px);
 }
 

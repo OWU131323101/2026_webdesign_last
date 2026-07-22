@@ -8,6 +8,15 @@
   --midnightblue: #191970;
   --aliceblue: #f0f8ff;
   --lightsteelblue: #b0c4de;
+  --darksteelblue: #2f5596;
+  --steelblue-15: rgba(70, 130, 180, 0.15);
+  --steelblue-12: rgba(70, 130, 180, 0.12);
+  --white-translucent: rgba(255, 255, 255, 0.95);
+  --offwhite: #f0f0f0;
+  --gray-light: #e0e0e0;
+  --gray-medium: #888888;
+  --gray-dark: #666666;
+  --gray-darker: #333333;
   --black: #000000;
 
   /* フォント */
@@ -43,8 +52,8 @@
 body {
   font-family: "Noto Sans JP", sans-serif;
   font-weight: 400;
-  background: aliceblue;
-  color: black;
+  background: var(--aliceblue);
+  color: var(--black);
 }
 
 h1 {
