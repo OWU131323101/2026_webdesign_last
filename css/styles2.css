@@ -38,7 +38,8 @@
     /* layout */
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: stretch;
+    flex-wrap: wrap;
     /* boxmodel */
     padding: 40px;
     gap: 40px;
@@ -50,9 +51,22 @@
     box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.1);
 }
 
+.main-display .item-thumbnail,
+.main-display .main-info {
+    flex: 1 1 45%;
+    min-width: 320px;
+}
+
+.main-display .item-thumbnail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 500px;
+    width: 100%;
+}
+
 /* 説明文エリア（左側） */
 .main-info {
-    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 15px; /* 要素ごとの適切な余白 */
@@ -153,6 +167,10 @@
     justify-content: center;
     transition: background 0.2s;
     flex: 0 0 auto;
+}
+
+.nav-btn.is-hidden {
+    display: none;
 }
 
 .thumbnail-container::-webkit-scrollbar {

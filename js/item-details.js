@@ -205,6 +205,19 @@ if (nextBtn) {
     });
 }
 
+// 作品一覧が横に収まっている場合はナビボタンを非表示にする
+function updateNavButtons() {
+    if (!prevBtn || !nextBtn || !portfolioContainer) return;
+
+    const hasOverflow = portfolioContainer.scrollWidth > portfolioContainer.clientWidth + 1;
+    prevBtn.classList.toggle('is-hidden', !hasOverflow);
+    nextBtn.classList.toggle('is-hidden', !hasOverflow);
+}
+
+window.addEventListener('resize', updateNavButtons);
+window.addEventListener('load', updateNavButtons);
+setTimeout(updateNavButtons, 0);
+
 // 横スクロールを実行する汎用関数
 function scrollList(container, direction) {
     const distance = container.clientWidth * 0.8;
