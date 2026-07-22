@@ -7,7 +7,7 @@ const worksData = [
         description: "Blenderを使用して制作した3Dの子供部屋です。温かみのあるライティングにこだわりました。",
         year: "2023年",
         duration: "3ヶ月",
-        imgSrc: "./images/Frame 3.png"
+        imgSrc: "./images/Frame 3 2.png"
     },
     {
         id: 2,
@@ -16,7 +16,7 @@ const worksData = [
         description: "Figmaを使用して制作したWebサイトのイメージです。架空の乙女ゲームの世界観を基にしています。",
         year: "2024年",
         duration: "2ヶ月",
-        imgSrc: "./images/Frame 4.png"
+        imgSrc: "./images/Frame 3 3.png"
     },
     {
         id: 3,
@@ -25,7 +25,7 @@ const worksData = [
         description: "3つ目の作品の説明です。テーマに沿ったキャラクターデザインと世界観の構築を行いました。",
         year: "2022年",
         duration: "1ヶ月",
-        imgSrc: "./images/Frame 5.png"
+        imgSrc: "./images/Frame 3 4.png"
     },
     {
         id: 4,
@@ -34,7 +34,7 @@ const worksData = [
         description: "4つ目の作品の説明です。Photoshopを使用して、クリーンで洗練されたアイコンをデザインしました。",
         year: "2024年",
         duration: "2週間",
-        imgSrc: "./images/Frame 6.png"
+        imgSrc: "./images/Frame 3 5.png"
     },
     {
         id: 5,

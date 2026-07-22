@@ -62,118 +62,36 @@
           <h2>Works</h2>
           <p>制作実績</p>
         </div>
-        <ul class="portfolio-container">
-          <li class="portfolio-item">
-            <div class="item-thumbnail">
-              <img
-                src="./images/Frame 3.png"
+          <div class="item-thumbnail">
+            <div class="main-image-wrapper">
+              <img id="main-image"
+                src="./images/Frame 3 2.png"
                 width="151"
                 height="114"
                 alt="blenderで作成した子供部屋"
               />
-              <p>子供部屋</p>
-              <span class="item-tag">Blender</span>
-              <div class="item-details" style="display: none;">
-                Blenderを使用して制作した3Dの子供部屋です。温かみのあるライティングにこだわりました。
+            </div>
+            <div class="main-info">
+              <h3 id="main-title" class="work-title">作品名 1</h3>
+              <span id="main-tag" class="item-tag">Blender</span>
+              <p id="main-description" class="item-details">
+                ここに作品の説明が入ります。制作の意図や、こだわったポイントなどを記載します。
+              </p>
+              <div class="item-info">
+                <p>制作年：<span id="main-year">2023年</span></p>
+                <p>制作期間：<span id="main-duration">3ヶ月</span></p>
               </div>
-              <dl class="item-info" style="display: none;">
-                <dt>制作年</dt><dd>2025年</dd>
-                <dt>製作期間</dt><dd>2週間</dd>
-              </dl>
             </div>
-          </li>
-          <li class="portfolio-item">
-            <div class="item-thumbnail">
-              <img
-                src="./images/Frame 3 2.png"
-                width="151"
-                height="114"
-                alt="Figmaで作成したソーシャルゲームのホームページのイメージ"
-              />
-              <p>Webサイトイメージ</p>
-              <span class="item-tag">Figma</span>
-              <div class="item-details" style="display: none;">
-                Figmaを使用して制作したWebサイトのイメージです。架空の乙女ゲームの世界観を基にしています。
+            <div class="main-arrow-right">&gt;</div>
+          </div>
+          <!-- サムネイル選択エリア -->
+          <div class="thumbnail-area">
+              <button id="prev-btn" class="nav-btn">&lt;</button>
+              <div class="thumbnail-container" id="thumbnail-container">
+                  <!-- JavaScriptでサムネイルが生成されます -->
               </div>
-              <dl class="item-info" style="display: none;">
-                <dt>制作年</dt><dd>2026年</dd>
-                <dt>製作期間</dt><dd>2週間</dd>
-              </dl>
-            </div>
-          </li>
-          <li class="portfolio-item">
-            <div class="item-thumbnail">
-              <img
-                src="./images/Frame 3 3.png"
-                width="151"
-                height="114"
-                alt="VRoidStudioで作成した3Dキャラクター"
-              />
-              <p>3Dキャラクター</p>
-              <span class="item-tag">VRoidStudio</span>
-            </div>
-          </li>
-          <li class="portfolio-item">
-            <div class="item-thumbnail">
-              <img
-                src="./images/Frame 3 4.png"
-                width="151"
-                height="114"
-                alt="VRoidStudioで作成した3Dキャラクター"
-              />
-              <p>アイコン</p>
-              <span class="item-tag">Photoshop</span>
-            </div>
-          </li>
-          <li class="portfolio-item">
-            <div class="item-thumbnail">
-              <img
-                src="./images/Frame 3 5.png"
-                width="151"
-                height="114"
-                alt="VRoidStudioで作成した3Dキャラクター"
-              />
-              <p>ナイスキャッチ</p>
-              <span class="item-tag">Photoshop</span>
-            </div>
-          </li>
-          <li class="portfolio-item">
-            <div class="item-thumbnail">
-              <img
-                src="./images/Frame 3 6.png"
-                width="151"
-                height="114"
-                alt="VRoidStudioで作成した3Dキャラクター"
-              />
-              <p>Web広告</p>
-              <span class="item-tag">Photoshop</span>
-            </div>
-          </li>
-          <li class="portfolio-item">
-            <div class="item-thumbnail">
-              <img
-                src="./images/Frame 3 7.png"
-                width="151"
-                height="114"
-                alt="VRoidStudioで作成した3Dキャラクター"
-              />
-              <p>リアル尋問室</p>
-              <span class="item-tag">Unity</span>
-            </div>
-          </li>
-          <li class="portfolio-item">
-            <div class="item-thumbnail">
-              <img
-                src="./images/Frame 3 8.png"
-                width="151"
-                height="114"
-                alt="VRoidStudioで作成した3Dキャラクター"
-              />
-              <p>酒場でのひととき</p>
-              <span class="item-tag">Blender</span>
-            </div>
-          </li>
-        </ul>
+              <button id="next-btn" class="nav-btn">&gt;</button>
+          </div>
       </section>
       <section id="About">
         <div class="title">
