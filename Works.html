@@ -1,122 +1,110 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
-    <title>
-      MyPortfolio_Works_大北あすかのポートフォリオサイトの制作実績ページです
-    </title>
-    <meta
-      name="description"
-      content="大北あすかのポートフォリオサイトの制作実績ページです"
-    />
-    <link href="./css/styles.css" rel="stylesheet" />
-    <link href="./css/styles2.css" rel="stylesheet" />
-    <link href="./css/global.css" rel="stylesheet" />
-    <link rel="icon" type="image/png" href="./favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="./favicon/favicon.svg" />
-    <link rel="shortcut icon" href="./favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
-    <link rel="manifest" href="./favicon/site.webmanifest" />
-  </head>
-  <body>
-    <header class="header">
-      <div class="header-site-menu">
-        <a class="header-logo" href="./index.html">
-          <img
-            src="./images/PortfolioSite.png"
-            width="400"
-            height="48"
-            alt="ロゴ"
-          />
-        </a>
-        <button class="toggle-menu-button" type="button" aria-label="メニューを開く">
-          <img
-            src="./images/Vecter.png"
-            width="200"
-            height="200"
-            alt="メニューアイコン"
-          />
-        </button>
-        <nav class="site-menu">
-          <ul>
-            <li><a href="index.html#Service">Service</a><p class="menu-sub">サービス</p></li>
-            <li><a href="index.html#Works">Works</a><p class="menu-sub">制作実績</p></li>
-            <li><a href="index.html#About">About</a><p class="menu-sub">自己紹介</p></li>
-          </ul>
-          <a href="Contact.html" class="flat-button">Contact</a>
-        </nav>
-      </div>
-    </header>
-    <main class="main2">
-      <section id="Works" class="works-section">
-        <div class="title">
-          <h2>Works</h2>
-          <p>制作実績</p>
-        </div>
-          <div class="main-display">
-            <div class="item-thumbnail">
-                <div id="media-container" class="media-container">
-                    <img id="main-image" src="" alt="メイン作品画像">
-                </div>
-            </div>
-            <div class="main-info">
-              <h3 id="main-title" class="work-title">作品名</h3>
-              <span id="main-tag" class="work-tag">タグ</span>
-              <p id="main-description" class="work-description">
-                ここに作品の説明が入ります。制作の意図や、こだわったポイントなどを記載します。
-              </p>
-              <div class="work-info">
-                <p>制作年：<span id="main-year">2023年</span></p>
-                <p>制作期間：<span id="main-duration">3ヶ月</span></p>
-              </div>
-            </div>
-          </div>
 
-          <!-- サムネイル選択エリア -->
-          <div class="thumbnail-area">
-              <button id="prev-btn" class="nav-btn" aria-label="前の作品">&lt;</button>
-              <div class="thumbnail-container" id="thumbnail-container">
-                  <!-- JavaScriptでサムネイルが生成されます -->
-              </div>
-              <button id="next-btn" class="nav-btn" aria-label="次の作品">&gt;</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet" />
+  <title>
+    MyPortfolio_Works_大北あすかのポートフォリオサイトの制作実績ページです
+  </title>
+  <meta name="description" content="大北あすかのポートフォリオサイトの制作実績ページです" />
+  <link href="./css/styles.css" rel="stylesheet" />
+  <link href="./css/styles2.css" rel="stylesheet" />
+  <link href="./css/global.css" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="./favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="./favicon/favicon.svg" />
+  <link rel="shortcut icon" href="./favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+  <link rel="manifest" href="./favicon/site.webmanifest" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-site-menu">
+      <a class="header-logo" href="./index.html">
+        <img src="./images/PortfolioSite.png" width="400" height="48" alt="ロゴ" />
+      </a>
+      <button class="toggle-menu-button" type="button" aria-label="メニューを開く">
+        <img src="./images/Vecter.png" width="200" height="200" alt="メニューアイコン" />
+      </button>
+      <nav class="site-menu">
+        <ul>
+          <li><a href="index.html#Service">Service</a>
+            <p class="menu-sub">サービス</p>
+          </li>
+          <li><a href="index.html#Works">Works</a>
+            <p class="menu-sub">制作実績</p>
+          </li>
+          <li><a href="index.html#About">About</a>
+            <p class="menu-sub">自己紹介</p>
+          </li>
+        </ul>
+        <a href="Contact.html" class="flat-button">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main class="main2">
+    <section id="Works" class="works-section">
+      <div class="title">
+        <h2>Works</h2>
+        <p>制作実績</p>
+      </div>
+      <div class="main-display">
+        <div class="item-thumbnail">
+          <div id="media-container" class="media-container">
+            <img id="main-image" src="" alt="メイン作品画像">
           </div>
-      </section>
-      <section id="About">
-        <div class="title">
-          <h2>About</h2>
-          <p>私について</p>
         </div>
-        <div id="about-item">
-          <img
-            src="./images/Mask group.png"
-            width="200"
-            height="200"
-            alt="大北あすかのアイコン"
-          />
-          <div id="about-text">
-            <h3>Asuka Okita</h3>
-            <p>
-              神奈川県横浜市出身。<br />
-              大学ではデザインと言語表現・技術の融合を学びながら、自主制作やプロジェクト活動に励んできました。これまでに、CG・イラスト・出版物などの「視覚表現」、ロゴやブログ構築を通じた「デジタル発信」、そしてアプリやゲームの根幹を支える「体験の設計」の3つの領域に挑戦しています。
-            </p>
+        <div class="main-info">
+          <h3 id="main-title" class="work-title">作品名</h3>
+          <span id="main-tag" class="work-tag">タグ</span>
+          <p id="main-description" class="work-description">
+            ここに作品の説明が入ります。制作の意図や、こだわったポイントなどを記載します。
+          </p>
+          <div class="work-info">
+            <p>制作年：<span id="main-year">2023年</span></p>
+            <p>制作期間：<span id="main-duration">3ヶ月</span></p>
           </div>
         </div>
-      </section>
-    </main>
-    <footer class="footer">
-      <p class="copyright"><small>&copy; Asuka Okita</small></p>
-    </footer>
-    <!-- JavaScriptファイルを読み込み -->
-    <script src="./js/toggle-menu.js"></script>
-    <script src="./js/item-details.js"></script>
-  </body>
+      </div>
+
+      <!-- サムネイル選択エリア -->
+      <div class="thumbnail-area">
+        <button id="prev-btn" class="nav-btn" aria-label="前の作品">&lt;</button>
+        <div class="thumbnail-container" id="thumbnail-container">
+          <!-- JavaScriptでサムネイルが生成されます -->
+        </div>
+        <button id="next-btn" class="nav-btn" aria-label="次の作品">&gt;</button>
+      </div>
+    </section>
+    <section id="About">
+      <div class="title">
+        <h2>About</h2>
+        <p>私について</p>
+      </div>
+      <div id="about-item">
+        <img src="./images/Mask group.png" width="200" height="200" alt="大北あすかのアイコン" />
+        <div id="about-text">
+          <h3>Asuka Okita</h3>
+          <p>
+            神奈川県横浜市出身。<br />
+            大学ではデザインと言語表現・技術の融合を学びながら、自主制作やプロジェクト活動に励んできました。これまでに、CG・イラスト・出版物などの「視覚表現」、ロゴやブログ構築を通じた「デジタル発信」、そしてアプリやゲームの根幹を支える「体験の設計」の3つの領域に挑戦しています。
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <p class="copyright"><small>&copy; Asuka Okita</small></p>
+  </footer>
+  <!-- JavaScriptファイルを読み込み -->
+  <script src="./js/toggle-menu.js"></script>
+  <script src="./js/item-details.js"></script>
+</body>
+
 </html>

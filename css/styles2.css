@@ -1,10 +1,11 @@
 @charset "utf-8";
+
 /*======================
   main2
 ======================*/
 .main2 {
-  /* boxmodel */
-    padding-top: 200px;
+    /* boxmodel */
+    padding-top: 150px;
 }
 
 /* =====================
@@ -12,30 +13,30 @@
 ======================*/
 
 #Works {
-    padding-top: 0;
+    padding-top: 0px;
 }
 
 .works-section {
-  /* layout */
-  max-width: 1000px;
-  margin: 0 auto;
-  /* boxmodel */
-  padding: 60px clamp(20px, 4vw, 48px);
-  width: 100%;
-  box-sizing: border-box;
+    /* layout */
+    max-width: 1000px;
+    margin: 0 auto;
+    /* boxmodel */
+    padding: 60px clamp(20px, 4vw, 48px);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .section-title {
-  /* layout */
-  text-align: center;
-  /* boxmodel */
-  margin-bottom: 40px;
-  letter-spacing: 0.05em;
-  /* visual */
-  font-size: 2rem;
+    /* layout */
+    text-align: center;
+    /* boxmodel */
+    margin-bottom: 40px;
+    letter-spacing: 0.05em;
+    /* visual */
+    font-size: 2rem;
 }
 
-/* PC用レイアウト / 写真：右, 説明文：左 */
+/* PC用レイアウト 写真：右, 説明文：左 */
 .main-display {
     /* layout */
     display: flex;
@@ -67,11 +68,11 @@
     width: 100%;
 }
 
-/* 説明文エリア（左側） */
+/* 説明文 */
 .main-info {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* 要素ごとの適切な余白 */
+    gap: 15px;
 }
 
 .work-title {
@@ -96,11 +97,13 @@
 }
 
 .work-info {
+    margin-top: 42px;
     font-size: 0.9rem;
     color: var(--gray-medium);
     display: flex;
     flex-direction: column;
     gap: 5px;
+    width: 100%;
 }
 
 .work-info p {
@@ -205,7 +208,7 @@
     background: var(--steelblue);
 }
 
-/* レスポンシブデザイン（スマホ：写真が上、説明文が下） */
+/* スマホ：写真が上、説明文が下 */
 @media screen and (max-width: 768px) {
     body {
         overflow-x: hidden;
@@ -213,7 +216,6 @@
     }
 
     .main2 {
-        padding-top: 100px;
         width: 100%;
         overflow-x: hidden;
     }
@@ -400,10 +402,19 @@
     color: var(--black);
 }
 
-#Contact .Office p,
-#Contact .contact-mail p {
+#Contact .Office p {
     font: var(--regular-18px);
     color: var(--gray-darker);
+    line-height: 1.8;
+}
+
+#Contact .Office p+p {
+    margin-top: -16px;
+}
+
+#Contact .contact-mail p {
+    color: var(--gray-darker);
+    font: var(--regular-18px);
     line-height: 1.8;
 }
 
@@ -413,7 +424,19 @@
 }
 
 #Contact .contact-mail .flat-button {
-    margin-top: 16px;
+    display: flex;
+    margin-top: 14px;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 25px;
+    width: fit-content;
+    font: var(--regular-16px);
+    color: var(--white);
+    text-align: center;
+}
+
+#Contact .contact-mail .flat-button:hover {
+    background-color: var(--steelblue);
 }
 
 @media screen and (max-width: 768px) {
