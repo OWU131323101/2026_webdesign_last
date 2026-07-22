@@ -448,7 +448,7 @@ main {
   width: 100%;
   /* visual */
   border-radius: 20px;
-  background: var(--white);
+  background: white;
   box-shadow: 0 4px 15px rgba(70, 130, 180, 0.15);
 }
 
@@ -472,7 +472,7 @@ main {
 
 .item-thumbnail p {
   font: var(--regular-24px);
-  color: var(--black);
+  color: black;
 }
 
 .item-tag {
@@ -483,8 +483,8 @@ main {
   padding: 8px 0;
   /* visual */
   border-radius: 10px;
-  background: var(--steelblue);
-  color: var(--white);
+  background: steelblue;
+  color: white;
   font: var(--regular-14px);
 }
 
