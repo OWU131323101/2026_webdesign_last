@@ -16,8 +16,9 @@
   width: 100%;
   z-index: 10; /* 重なり順を指定 */
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
+  gap: 40px;
   /* boxmodel */
   padding: 24px 40px;
   box-sizing: border-box;
@@ -30,13 +31,14 @@
   /* layout */
   vertical-align: middle;
   /* boxmodel */
-  margin-right: auto;
+  margin-right: 0;
 }
 
 .header-logo {
   /* layout */
   display: flex;
   align-items: center;
+  margin-right: 40px;
 }
 
 .site-menu {
@@ -245,7 +247,7 @@ main {
   align-items: center;
   gap: 80px;
   /* boxmodel */
-  padding-top: 20px;
+  padding: 20px 0 0;
 }
 
 .title {

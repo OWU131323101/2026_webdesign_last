@@ -4,19 +4,23 @@
 ======================*/
 .main2 {
   /* boxmodel */
-    padding-top: 100px;
+    padding-top: 150px;
 }
 
 /* =====================
   Works用
 ======================*/
 
+#Works {
+    padding-top: 0;
+}
+
 .works-section {
     /* layout */
     max-width: 900px;
     margin: 0 auto;
     /* boxmodel */
-    padding: 60px 20px;
+    padding: 60px clamp(20px, 4vw, 48px);
 }
 
 .section-title {
@@ -87,25 +91,68 @@
     margin: 0;
 }
 
+/* メディア表示エリア */
+.media-container {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--offwhite);
+}
+
+.media-container img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+}
+
+.media-container iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: block;
+    border: 0;
+}
+
 /* サムネイル・スライダーエリア */
 .thumbnail-area {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 15px;
-    padding: 10px 0;
+    padding: 10px 15px;
+    width: 100%;
+    overflow: hidden;
 }
 
-.thumbnail-container {
+.thumbnail-container,
+#portfolio-container {
     display: flex;
     gap: 12px;
     overflow-x: auto;
     scroll-behavior: smooth;
     padding: 10px 5px;
     max-width: 650px;
+    flex: 1 1 auto;
+    min-width: 0;
     /*非表示*/
     -ms-overflow-style: none;
     scrollbar-width: none;
+}
+
+.nav-btn {
+    background: var(--darksteelblue);
+    color: var(--white);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    flex: 0 0 auto;
 }
 
 .thumbnail-container::-webkit-scrollbar {
@@ -135,22 +182,8 @@
     transform: scale(1.05);
 }
 
-.nav-btn {
-    background: var(--offwhite);
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    font-size: 1.2rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.2s;
-}
-
 .nav-btn:hover {
-    background: var(--gray-light);
+    background: var(--steelblue);
 }
 
 /* レスポンシブデザイン（スマホ：写真が上、説明文が下） */
@@ -176,7 +209,7 @@
     width: 100%;
     max-width: 1080px;
     margin: 0 auto;
-    padding: 80px 20px 120px;
+    padding: 0 clamp(20px, 4vw, 48px) 120px;
     gap: 40px;
 }
 
@@ -223,7 +256,7 @@
 
 @media screen and (max-width: 768px) {
     #Contact {
-        padding: 60px 16px 80px;
+        padding: 0 16px 80px;
         gap: 24px;
     }
 

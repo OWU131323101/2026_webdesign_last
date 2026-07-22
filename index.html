@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="viewport" content="width=device-width" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,6 +18,7 @@
       content="大北あすかのポートフォリオサイトです" 
     />
     <link href="./css/styles.css" rel="stylesheet" />
+    <link href="./css/styles2.css" rel="stylesheet" />
     <link href="./css/global.css" rel="stylesheet" />
     <link rel="icon" type="image/png" href="./favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="./favicon/favicon.svg" />
@@ -38,11 +38,11 @@
             alt="ロゴ"
           />
         </a>
-        <button class="toggle-menu-button">
+        <button class="toggle-menu-button" type="button" aria-label="メニューを開く">
           <img
             src="./images/Vecter.png"
-            width="50"
-            height="50"
+            width="200"
+            height="200"
             alt="メニューアイコン"
           />
         </button>
@@ -70,8 +70,8 @@
       <div class="hero-guide">
         <img
           src="./images/arrow-down.png"
-          width="120"
-          height="120"
+          width="100"
+          height="100"
           alt="ナビゲーション用の矢印"
         />
       </div>
@@ -138,47 +138,51 @@
           <h2>Works</h2>
           <p>制作実績</p>
         </div>
-        <ul class="portfolio-container">
-          <li class="portfolio-item">
-            <div class="item-thumbnail">
-              <img
-                src="./images/Frame 3.png"
-                width="151"
-                height="114"
-                alt="blenderで作成した子供部屋"
-                loading="lazy"
-              />
-              <p>子供部屋</p>
-              <span class="item-tag">Blender</span>
-            </div>
-          </li>
-          <li class="portfolio-item">
-            <div class="item-thumbnail">
-              <img
-                src="./images/Frame 3 2.png"
-                width="151"
-                height="114"
-                alt="Figmaで作成したソーシャルゲームのホームページのイメージ"
-                loading="lazy"
-              />
-              <p>Webサイトイメージ</p>
-              <span class="item-tag">Figma</span>
-            </div>
-          </li>
-          <li class="portfolio-item">
-            <div class="item-thumbnail">
-              <img
-                src="./images/Frame 3 3.png"
-                width="151"
-                height="114"
-                alt="VRoidStudioで作成した3Dキャラクター"
-                loading="lazy"
-              />
-              <p>3Dキャラクター</p>
-              <span class="item-tag">VRoidStudio</span>
-            </div>
-          </li>
-        </ul>
+        <div class="thumbnail-area">
+          <button id="prev-btn" class="nav-btn">&lt;</button>
+          <ul class="portfolio-container" id="portfolio-container">
+            <li class="portfolio-item">
+              <div class="item-thumbnail">
+                <img
+                  src="./images/Frame 3.png"
+                  width="151"
+                  height="114"
+                  alt="blenderで作成した子供部屋"
+                  loading="lazy"
+                />
+                <p>子供部屋</p>
+                <span class="item-tag">Blender</span>
+              </div>
+            </li>
+            <li class="portfolio-item">
+              <div class="item-thumbnail">
+                <img
+                  src="./images/Frame 3 2.png"
+                  width="151"
+                  height="114"
+                  alt="Figmaで作成したソーシャルゲームのホームページのイメージ"
+                  loading="lazy"
+                />
+                <p>Webサイトイメージ</p>
+                <span class="item-tag">Figma</span>
+              </div>
+            </li>
+            <li class="portfolio-item">
+              <div class="item-thumbnail">
+                <img
+                  src="./images/Frame 3 3.png"
+                  width="151"
+                  height="114"
+                  alt="VRoidStudioで作成した3Dキャラクター"
+                  loading="lazy"
+                />
+                <p>3Dキャラクター</p>
+                <span class="item-tag">VRoidStudio</span>
+              </div>
+            </li>
+          </ul>
+          <button id="next-btn" class="nav-btn">&gt;</button>
+        </div>
         <div class="view-all-wrapper">
           <a href="Works.html" class="view-all-btn">View All</a>
         </div>
@@ -211,5 +215,7 @@
     </footer>
     <!-- JavaScriptファイルを読み込み -->
     <script src="./js/toggle-menu.js"></script>
+    <script src="./js/scroll-menu.js"></script>
+    <script src="./js/item-details.js"></script>
   </body>
 </html>
