@@ -43,7 +43,7 @@ const worksData = [
         description: "5つ目の作品の説明です。エフェクトを活用し、テンポの良いプロモーションビデオを作成しました。",
         year: "2025年",
         duration: "1.5ヶ月",
-        imgSrc: "./images/Frame 7.png"
+        imgSrc: "./images/Frame 3 6.png"
     }
 ];
 
