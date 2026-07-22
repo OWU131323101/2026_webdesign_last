@@ -180,7 +180,7 @@ function initThumbnails() {
     });
 }
 
-// 左右のボタンでの切り替え（スライダー連動）
+// 左右のボタンでの切り替え
 if (prevBtn) {
     prevBtn.addEventListener('click', () => {
         if (isDetailPage) {
@@ -218,7 +218,7 @@ window.addEventListener('resize', updateNavButtons);
 window.addEventListener('load', updateNavButtons);
 setTimeout(updateNavButtons, 0);
 
-// 横スクロールを実行する汎用関数
+// 横スクロールを実行
 function scrollList(container, direction) {
     const distance = container.clientWidth * 0.8;
     container.scrollBy({
