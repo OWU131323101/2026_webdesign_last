@@ -46,6 +46,7 @@
   display: flex;
   align-items: center;
   gap: 48px;
+  margin-left: auto;
 }
 
 .site-menu ul {
@@ -429,10 +430,10 @@ main {
   /* layout */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
+  gap: 32px;
   justify-items: center;
   /* boxmodel */
-  padding: 35px;
+  padding: 24px;
   width: 100%;
 }
 
@@ -443,7 +444,7 @@ main {
   align-items: flex-start;
   gap: 24px;
   /* boxmodel */
-  padding: 52px 39px;
+  padding: 40px 28px;
   box-sizing: border-box;
   width: 100%;
   /* visual */
@@ -498,8 +499,8 @@ main {
   }
 
   .portfolio-item {
-    min-width: 300px; /* 最小幅 */
-    flex-shrink: 0; /* 縮小しない */
+    min-width: 300px;
+    flex-shrink: 0;
   }
 }
 
