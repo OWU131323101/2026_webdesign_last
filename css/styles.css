@@ -452,11 +452,6 @@ body.home-page #Works .nav-btn {
   font-size: 1.5rem;
   cursor: pointer;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.16);
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-body.home-page #Works .nav-btn:hover {
-  transform: translateY(-2px);
 }
 
 body.home-page #Works .nav-btn.is-hidden {
