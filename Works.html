@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -48,9 +49,9 @@
         </button>
         <nav class="site-menu">
           <ul>
-            <li><a href="#Service">Service</a><p class="menu-sub">サービス</p></li>
-            <li><a href="#Works">Works</a><p class="menu-sub">制作実績</p></li>
-            <li><a href="#About">About</a><p class="menu-sub">自己紹介</p></li>
+            <li><a href="index.html/#Service">Service</a><p class="menu-sub">サービス</p></li>
+            <li><a href="index.html/#Works">Works</a><p class="menu-sub">制作実績</p></li>
+            <li><a href="index.html/#About">About</a><p class="menu-sub">自己紹介</p></li>
           </ul>
           <a href="Contact.html" class="flat-button">Contact</a>
         </nav>
@@ -62,28 +63,23 @@
           <h2>Works</h2>
           <p>制作実績</p>
         </div>
-          <div class="item-thumbnail">
-            <div class="main-image-wrapper">
-              <img id="main-image"
-                src="./images/Frame 3 2.png"
-                width="151"
-                height="114"
-                alt="blenderで作成した子供部屋"
-              />
+          <div class="main-display">
+            <div class="item-thumbnail">
+                <img id="main-image" src="" alt="メイン作品画像">
             </div>
             <div class="main-info">
-              <h3 id="main-title" class="work-title">作品名 1</h3>
-              <span id="main-tag" class="item-tag">Blender</span>
-              <p id="main-description" class="item-details">
+              <h3 id="main-title" class="work-title">作品名</h3>
+              <span id="main-tag" class="work-tag">タグ</span>
+              <p id="main-description" class="work-description">
                 ここに作品の説明が入ります。制作の意図や、こだわったポイントなどを記載します。
               </p>
-              <div class="item-info">
+              <div class="work-info">
                 <p>制作年：<span id="main-year">2023年</span></p>
                 <p>制作期間：<span id="main-duration">3ヶ月</span></p>
               </div>
             </div>
-            <div class="main-arrow-right">&gt;</div>
           </div>
+
           <!-- サムネイル選択エリア -->
           <div class="thumbnail-area">
               <button id="prev-btn" class="nav-btn">&lt;</button>

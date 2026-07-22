@@ -1,49 +1,44 @@
-// 作品データの配列（ここを編集して実際の作品データを入れてください）
+// 作品データの定義（実際の画像パスやデータに合わせて調整してください）
 const worksData = [
     {
-        id: 1,
         title: "子供部屋",
         tag: "Blender",
-        description: "Blenderを使用して制作した3Dの子供部屋です。温かみのあるライティングにこだわりました。",
-        year: "2023年",
-        duration: "3ヶ月",
-        imgSrc: "./images/Frame 3 2.png"
-    },
-    {
-        id: 2,
-        title: "Webサイトイメージ",
-        tag: "Figma",
-        description: "Figmaを使用して制作したWebサイトのイメージです。架空の乙女ゲームの世界観を基にしています。",
-        year: "2024年",
-        duration: "2ヶ月",
-        imgSrc: "./images/Frame 3 3.png"
-    },
-    {
-        id: 3,
-        title: "3Dキャラクター",
-        tag: "VRoidStudio",
-        description: "3つ目の作品の説明です。テーマに沿ったキャラクターデザインと世界観の構築を行いました。",
-        year: "2022年",
-        duration: "1ヶ月",
-        imgSrc: "./images/Frame 3 4.png"
-    },
-    {
-        id: 4,
-        title: "アイコンデザイン",
-        tag: "Photoshop",
-        description: "4つ目の作品の説明です。Photoshopを使用して、クリーンで洗練されたアイコンをデザインしました。",
-        year: "2024年",
-        duration: "2週間",
-        imgSrc: "./images/Frame 3 5.png"
-    },
-    {
-        id: 5,
-        title: "ナイスキャッチ",
-        tag: "Photoshop",
-        description: "5つ目の作品の説明です。エフェクトを活用し、テンポの良いプロモーションビデオを作成しました。",
+        description: "Blenderを使用して作成した子供部屋の3Dモデリング作品です。温かみのある空間と小物や質感を丁寧に表現しました。",
         year: "2025年",
-        duration: "1.5ヶ月",
-        imgSrc: "./images/Frame 3 6.png"
+        duration: "2週間",
+        imgSrc: "images/Frame 3.png"
+    },
+    {
+        title: "作品タイトル 2",
+        tag: "UI/UX",
+        description: "ユーザビリティを追求したインタラクティブなWebサービスのUIデザイン。直感的な操作フローを意識して設計しました。",
+        year: "2025年",
+        duration: "1ヶ月",
+        imgSrc: "images/Frame 3 2.png"
+    },
+    {
+        title: "作品タイトル 3",
+        tag: "TouchDesigner",
+        description: "センサー入力と連動してリアルタイムに映像が変化するインタラクティブアート作品。没入感のある空間演出を行いました。",
+        year: "2025年",
+        duration: "3週間",
+        imgSrc: "images/Frame 3 3.png"
+    },
+    {
+        title: "作品タイトル 4",
+        tag: "Unity",
+        description: "AR技術を活用した街歩きお買い物RPGアプリケーションのプロトタイプ制作。ゲーム要素を取り入れた新しい体験設計です。",
+        year: "2025年",
+        duration: "1ヶ月半",
+        imgSrc: "images/Frame 3 4.png"
+    },
+    {
+        title: "作品タイトル 5",
+        tag: "Illustration",
+        description: "デジタルツールを用いて描いたオリジナルイラストレーション。光と影のコントラストにこだわり、世界観を構築しました。",
+        year: "2024年",
+        duration: "1週間",
+        imgSrc: "images/Frame 3 5.png"
     }
 ];
 
@@ -56,14 +51,12 @@ const mainYear = document.getElementById('main-year');
 const mainDuration = document.getElementById('main-duration');
 const thumbnailContainer = document.getElementById('thumbnail-container');
 
-// 初期設定：0番目のデータを表示
 let currentIndex = 0;
 
 // メインディスプレイを更新する関数
 function updateMainDisplay(index) {
     const data = worksData[index];
     
-    // 情報を書き換え
     mainImage.src = data.imgSrc;
     mainTitle.textContent = data.title;
     mainTag.textContent = data.tag;
@@ -71,7 +64,7 @@ function updateMainDisplay(index) {
     mainYear.textContent = data.year;
     mainDuration.textContent = data.duration;
 
-    // サムネイルの「active」クラスを付け替える（見た目の更新）
+    // サムネイルのactive状態を更新
     const thumbnails = document.querySelectorAll('.thumbnail');
     thumbnails.forEach((thumb, i) => {
         if (i === index) {
@@ -91,11 +84,11 @@ function initThumbnails() {
 
         const thumbImg = document.createElement('img');
         thumbImg.src = data.imgSrc;
-        thumbImg.alt = `サムネイル ${index + 1}`;
+        thumbImg.alt = data.title;
 
         thumbDiv.appendChild(thumbImg);
 
-        // クリックイベントを追加（選択すると反映される機能）
+        // クリック時にメインに反映
         thumbDiv.addEventListener('click', () => {
             currentIndex = index;
             updateMainDisplay(currentIndex);
@@ -105,23 +98,31 @@ function initThumbnails() {
     });
 }
 
-// 左右の矢印ボタンの動作設定（オプション）
+// 左右のボタンでの切り替え（スライダー連動）
 document.getElementById('prev-btn').addEventListener('click', () => {
     currentIndex = (currentIndex > 0) ? currentIndex - 1 : worksData.length - 1;
     updateMainDisplay(currentIndex);
-    // スクロール位置を調整
-    const targetThumb = document.querySelectorAll('.thumbnail')[currentIndex];
-    targetThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    scrollThumbnailIntoView();
 });
 
 document.getElementById('next-btn').addEventListener('click', () => {
     currentIndex = (currentIndex < worksData.length - 1) ? currentIndex + 1 : 0;
     updateMainDisplay(currentIndex);
-    // スクロール位置を調整
-    const targetThumb = document.querySelectorAll('.thumbnail')[currentIndex];
-    targetThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    scrollThumbnailIntoView();
 });
 
-// 初期化の実行
+// 選択されたサムネイル位置までスクロールさせる
+function scrollThumbnailIntoView() {
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    if (thumbnails[currentIndex]) {
+        thumbnails[currentIndex].scrollIntoView({
+            behavior: 'smooth',
+            block: 'nearest',
+            inline: 'center'
+        });
+    }
+}
+
+// 初期化実行
 initThumbnails();
 updateMainDisplay(currentIndex);

@@ -14,7 +14,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10; /* 重なり順を指定-最前面- */
+  z-index: 10; /* 重なり順を指定 */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -65,9 +65,12 @@
 
 /* button */
 .flat-button {
+  /* layout */
+  text-align: center;
+  /* boxmodel */
   padding: 10px 48px;
   border-radius: 50px;
-  text-align: center;
+  /* visual */
   color: white;
   background: steelblue;
   font: var(--regular-24px);
@@ -106,11 +109,13 @@
     top: 100%; /* ヘッダーのすぐ下に配置 */
     left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95); /* 下のコンテンツが透けないように背景色を指定 */
+    /* boxmodel */
     padding: 40px;
     box-sizing: border-box;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1); /* メニューの下にうっすら影をつける */
-    gap: 40px; /* メニュー内の項目とボタンの隙間 */
+    /* visual */
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    gap: 40px;
   }
 
   .site-menu ul {
@@ -123,8 +128,10 @@
   }
 
   .menu-sub {
+    /* layout */
     display: block;
     font: var(--regular-16px);
+    /* visual */
     color: steelblue;
   }
 }
@@ -192,7 +199,7 @@
 
 @keyframes fadeUp {
   to {
-    opacity: 5;
+    opacity: 1;
     transform: translate(-50%, 0);
   }
 }
@@ -339,6 +346,7 @@ main {
     padding: 40px;
   }
 }
+
 /* =========================
     Works
 ========================= */
@@ -525,7 +533,6 @@ main {
   font: var(--regular-14px);
 }
 
-/* 修正：スマホ表示時のメニュー崩れ防止のため、.site-menu.is-show に変更し display: flex に設定 */
 .site-menu.is-show {
   display: flex;
 }

@@ -7,76 +7,161 @@
     padding-top: 200px;
 }
 
-dl {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
+/* =====================
+  Works用
+======================*/
+
+.works-section {
+    /* layout */
+    max-width: 900px;
+    margin: 0 auto;
+    /* boxmodel */
+    padding: 60px 20px;
 }
 
-dt {
-  width: 30%;
-  padding-bottom: 20px;
-  margin-bottom: 10px;
-  background-color: #DADADA;
+.section-title {
+    /* layout */
+    text-align: center;
+    /* boxmodel */
+    margin-bottom: 40px;
+    letter-spacing: 0.05em;
+    /* visual */
+    font-size: 2rem;
 }
 
-dd {
-  width: 70%;
-  padding-bottom: 20px;
-  background-color: #F3F3F3;
-  margin-bottom: 10px;
+/* PC用レイアウト / 写真：右, 説明文：左 */
+.main-display {
+    /* layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* boxmodel */
+    padding: 40px;
+    gap: 40px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    /* visual */
+    background: #ffffff;
+    box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.1);
 }
 
-/* モーダル背景（画面全体を覆う黒い半透明の膜） */
-.modal-overlay {
-  display: none; /* 最初は非表示 */
-  position: fixed; /* 画面に固定 */
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.7); /* 半透明の黒 */
-  z-index: 1000; /* 他の要素より一番上に表示 */
-  justify-content: center;
-  align-items: center;
+/* 説明文エリア（左側） */
+.main-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* 要素ごとの適切な余白 */
 }
 
-/* モーダルの中身（白いカード部分） */
-.modal-content {
-  background-color: #ffffff;
-  padding: 30px;
-  border-radius: 12px;
-  width: 90%;
-  max-width: 600px;
-  position: relative;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+.work-title {
+    font-size: 1.8rem;
+    margin: 0;
 }
 
-.modal-content img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 20px;
+.work-tag {
+    display: inline-block;
+    background-color: #4a90e2;
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    align-self: flex-start;
 }
 
-.modal-desc {
-  margin-top: 20px;
-  text-align: left;
-  line-height: 1.6;
+.work-description {
+    line-height: 1.7;
+    color: #666666;
+    margin: 0;
 }
 
-/* 閉じるボタン（×） */
-.modal-close {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 28px;
-  color: #666;
-  cursor: pointer;
-  transition: color 0.3s;
+.work-info {
+    font-size: 0.9rem;
+    color: #888888;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
-.modal-close:hover {
-  color: #000;
+.work-info p {
+    margin: 0;
+}
+
+/* サムネイル・スライダーエリア */
+.thumbnail-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px 0;
+}
+
+.thumbnail-container {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px 5px;
+    max-width: 650px;
+    /*非表示*/
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.thumbnail-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* サムネイル単体（小さく表示） */
+.thumbnail {
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid transparent;
+    flex-shrink: 0;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thumbnail.active {
+    border-color: #4a90e2;
+    transform: scale(1.05);
+}
+
+.nav-btn {
+    background: #f0f0f0;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.nav-btn:hover {
+    background: #e0e0e0;
+}
+
+/* レスポンシブデザイン（スマホ：写真が上、説明文が下） */
+@media screen and (max-width: 768px) {
+    .main-display {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .work-title {
+        font-size: 1.5rem;
+    }
 }
