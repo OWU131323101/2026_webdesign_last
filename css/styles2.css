@@ -13,14 +13,14 @@
 ======================*/
 
 #Works {
+    /* boxmodel */
     padding-top: 0px;
 }
 
 .works-section {
-    /* layout */
+    /* boxmodel */
     max-width: 1000px;
     margin: 0 auto;
-    /* boxmodel */
     padding: 60px clamp(20px, 4vw, 48px);
     width: 100%;
     box-sizing: border-box;
@@ -31,8 +31,8 @@
     text-align: center;
     /* boxmodel */
     margin-bottom: 40px;
-    letter-spacing: 0.05em;
     /* visual */
+    letter-spacing: 0.05em;
     font-size: 2rem;
 }
 
@@ -43,9 +43,9 @@
     flex-direction: row;
     align-items: stretch;
     flex-wrap: wrap;
+    gap: 40px;
     /* boxmodel */
     padding: 40px;
-    gap: 40px;
     margin-bottom: 30px;
     border-radius: 12px;
     border: 1px solid var(--gray-light);
@@ -56,310 +56,400 @@
 
 .main-display .item-thumbnail,
 .main-display .main-info {
+    /* layout */
     flex: 1 1 45%;
+    /* boxmodel */
     min-width: 320px;
 }
 
 .main-display .item-thumbnail {
+    /* layout */
     display: flex;
     align-items: center;
     justify-content: center;
+    /* boxmodel */
     max-width: 500px;
     width: 100%;
 }
 
 /* 説明文 */
 .main-info {
+    /* layout */
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
 .work-title {
-    font-size: 1.8rem;
+    /* boxmodel */
     margin: 0;
+    /* visual */
+    font-size: 1.8rem;
 }
 
 .work-tag {
+    /* layout */
     display: inline-block;
-    background-color: var(--steelblue);
-    color: var(--white);
+    align-self: flex-start;
+    /* boxmodel */
     padding: 4px 12px;
     border-radius: 4px;
+    /* visual */
+    background-color: var(--steelblue);
+    color: var(--white);
     font-size: 0.85rem;
-    align-self: flex-start;
 }
 
 .work-description {
+    /* boxmodel */
+    margin: 0;
+    /* visual */
     line-height: 1.7;
     color: var(--gray-dark);
-    margin: 0;
 }
 
 .work-info {
-    margin-top: 42px;
-    font-size: 0.9rem;
-    color: var(--gray-medium);
+    /* layout */
     display: flex;
     flex-direction: column;
     gap: 5px;
+    /* boxmodel */
+    margin-top: 42px;
     width: 100%;
+    /* visual */
+    font-size: 0.9rem;
+    color: var(--gray-medium);
 }
 
 .work-info p {
+    /* boxmodel */
     margin: 0;
 }
 
 /* メディア表示エリア */
 .media-container {
+    /* layout */
+    overflow: hidden;
+    /* boxmodel */
     width: 100%;
     border-radius: 10px;
-    overflow: hidden;
+    /* visual */
     background: var(--offwhite);
 }
 
 .media-container img {
+    /* layout */
+    display: block;
+    /* boxmodel */
     width: 100%;
     aspect-ratio: 4 / 3;
+    /* visual */
     object-fit: cover;
-    display: block;
 }
 
 .media-container iframe {
+    /* layout */
+    display: block;
+    /* boxmodel */
     width: 100%;
     aspect-ratio: 16 / 9;
-    display: block;
     border: 0;
 }
 
 /* サムネイル・スライダーエリア */
 .thumbnail-area {
+    /* layout */
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 15px;
+    overflow: hidden;
+    /* boxmodel */
     padding: 10px 15px;
     width: 100%;
-    overflow: hidden;
 }
 
 .thumbnail-container {
+    /* layout */
     display: flex;
     gap: 12px;
     overflow-x: auto;
-    scroll-behavior: smooth;
+    flex: 1 1 auto;
+    -ms-overflow-style: none;
+    /* boxmodel */
     padding: 10px 5px;
     max-width: 650px;
-    flex: 1 1 auto;
     min-width: 0;
-    /*非表示*/
-    -ms-overflow-style: none;
+    /* visual */
+    scroll-behavior: smooth;
     scrollbar-width: none;
 }
 
 .nav-btn {
-    background: var(--darksteelblue);
-    color: var(--white);
+    /* layout */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    /* boxmodel */
     border: none;
     width: 40px;
     height: 40px;
     border-radius: 50%;
+    /* visual */
+    background: var(--darksteelblue);
+    color: var(--white);
     font-size: 1.2rem;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     transition: background 0.2s;
-    flex: 0 0 auto;
 }
 
 .nav-btn.is-hidden {
+    /* layout */
     display: none;
 }
 
 .thumbnail-container::-webkit-scrollbar {
+    /* layout */
     display: none;
 }
 
 /* サムネイル単体（小さく表示） */
 .thumbnail {
+    /* layout */
+    overflow: hidden;
+    flex-shrink: 0;
+    /* boxmodel */
     width: 70px;
     height: 70px;
     border-radius: 8px;
-    overflow: hidden;
-    cursor: pointer;
     border: 2px solid transparent;
-    flex-shrink: 0;
+    /* visual */
+    cursor: pointer;
     transition: transform 0.2s, border-color 0.2s;
 }
 
 .thumbnail img {
+    /* boxmodel */
     width: 100%;
     height: 100%;
+    /* visual */
     object-fit: cover;
 }
 
 .thumbnail.active {
+    /* boxmodel */
     border-color: var(--steelblue);
+    /* visual */
     transform: scale(1.05);
 }
 
 .nav-btn:hover {
+    /* visual */
     background: var(--steelblue);
 }
 
 /* スマホ：写真が上、説明文が下 */
 @media screen and (max-width: 768px) {
     body {
+        /* layout */
         overflow-x: hidden;
+        /* boxmodel */
         width: 100%;
     }
 
     .main2 {
-        width: 100%;
+        /* layout */
         overflow-x: hidden;
+        /* boxmodel */
+        width: 100%;
     }
 
     #Works {
+        /* layout */
+        overflow-x: hidden;
+        /* boxmodel */
         padding-top: 0;
         width: 100%;
-        overflow-x: hidden;
     }
 
     .works-section {
+        /* layout */
+        overflow-x: hidden;
+        /* boxmodel */
         padding: 20px 16px;
         width: 100%;
-        overflow-x: hidden;
     }
 
     .main-display {
+        /* layout */
         flex-direction: column;
-        padding: 16px;
         gap: 16px;
+        overflow-x: hidden;
+        /* boxmodel */
+        padding: 16px;
         border-radius: 8px;
         width: 100%;
-        overflow-x: hidden;
     }
 
     .main-display .item-thumbnail,
     .main-display .main-info {
+        /* layout */
         flex: 1 1 100%;
-        min-width: 100%;
         overflow-x: hidden;
+        /* boxmodel */
+        min-width: 100%;
     }
 
     .main-display .item-thumbnail {
-        max-width: 100%;
+        /* layout */
         overflow-x: hidden;
+        /* boxmodel */
+        max-width: 100%;
     }
 
     .media-container {
+        /* layout */
+        overflow: hidden;
+        /* boxmodel */
         border-radius: 8px;
         width: 100%;
-        overflow: hidden;
     }
 
     .media-container img {
+        /* boxmodel */
         aspect-ratio: 16 / 9;
         max-width: 100%;
     }
 
     .work-title {
-        font-size: 1.3rem;
-        margin: 0;
+        /* layout */
         word-break: break-word;
+        /* boxmodel */
+        margin: 0;
+        /* visual */
+        font-size: 1.3rem;
     }
 
     .work-tag {
+        /* layout */
         display: inline-block;
-        background-color: var(--steelblue);
-        color: var(--white);
+        align-self: flex-start;
+        /* boxmodel */
         padding: 6px 12px;
         border-radius: 4px;
+        /* visual */
+        background-color: var(--steelblue);
+        color: var(--white);
         font-size: 0.75rem;
-        align-self: flex-start;
     }
 
     .work-description {
+        /* layout */
+        word-break: break-word;
+        /* boxmodel */
+        margin: 0;
+        /* visual */
         font-size: 0.9rem;
         line-height: 1.6;
-        margin: 0;
-        word-break: break-word;
     }
 
     .work-info {
-        font-size: 0.85rem;
+        /* boxmodel */
         margin-top: 8px;
+        /* visual */
+        font-size: 0.85rem;
     }
 
     .thumbnail-area {
+        /* layout */
         gap: 8px;
-        padding: 8px;
-        width: 100%;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
+        /* boxmodel */
+        padding: 8px;
+        width: 100%;
+        /* visual */
         scroll-behavior: smooth;
     }
 
     .thumbnail-container {
-        max-width: 100%;
+        /* layout */
         gap: 8px;
-        padding: 8px 4px;
         overflow-x: auto;
+        /* boxmodel */
+        max-width: 100%;
+        padding: 8px 4px;
     }
 
     .nav-btn {
+        /* layout */
+        flex-shrink: 0;
+        /* boxmodel */
         width: 36px;
         height: 36px;
-        font-size: 1rem;
-        flex-shrink: 0;
         min-width: 36px;
+        /* visual */
+        font-size: 1rem;
     }
 
     .thumbnail {
+        /* layout */
+        flex-shrink: 0;
+        /* boxmodel */
         width: 60px;
         height: 60px;
         border-radius: 6px;
-        flex-shrink: 0;
     }
 
     .title {
+        /* boxmodel */
         margin-bottom: 20px;
     }
 
     .title h2 {
+        /* visual */
         font: var(--bold-32px);
     }
 
     .title p {
+        /* visual */
         font: var(--bold-12px);
     }
 
     #About {
-        width: 100%;
+        /* layout */
         overflow-x: hidden;
+        /* boxmodel */
+        width: 100%;
     }
 
     #about-item {
+        /* layout */
         flex-direction: column;
         gap: 16px;
+        overflow-x: hidden;
+        /* boxmodel */
         padding: 0 16px;
         width: 100%;
-        overflow-x: hidden;
     }
 
     #about-item img {
+        /* boxmodel */
         width: 150px;
         height: 150px;
     }
 
     #about-text h3 {
+        /* visual */
         font: var(--regular-24px);
     }
 
     #about-text p {
-        font: var(--regular-14px);
+        /* layout */
         word-break: break-word;
+        /* visual */
+        font: var(--regular-14px);
     }
 }
 
@@ -367,29 +457,35 @@
    Contact
 ======================= */
 #Contact {
+    /* layout */
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 40px;
+    /* boxmodel */
     width: 100%;
     max-width: 1080px;
     margin: 0 auto;
     padding: 0 clamp(20px, 4vw, 48px) 120px;
-    gap: 40px;
 }
 
 #Contact .Office,
 #Contact .contact-mail {
-    width: 100%;
-    background: var(--white);
-    border-radius: 20px;
-    box-shadow: 0 12px 30px rgba(70, 130, 180, 0.12);
-    padding: 40px;
+    /* layout */
     display: flex;
     flex-direction: column;
     gap: 24px;
+    /* boxmodel */
+    width: 100%;
+    border-radius: 20px;
+    padding: 40px;
+    /* visual */
+    background: var(--white);
+    box-shadow: 0 12px 30px rgba(70, 130, 180, 0.12);
 }
 
 #Contact .Office iframe {
+    /* boxmodel */
     width: 100%;
     min-height: 360px;
     border: 1px solid var(--gray-light);
@@ -398,64 +494,78 @@
 
 #Contact .Office h3,
 #Contact .contact-mail h3 {
+    /* visual */
     font: var(--bold-32px);
     color: var(--black);
 }
 
 #Contact .Office p {
+    /* visual */
     font: var(--regular-18px);
     color: var(--gray-darker);
     line-height: 1.8;
 }
 
 #Contact .Office p+p {
+    /* boxmodel */
     margin-top: -16px;
 }
 
 #Contact .contact-mail p {
+    /* visual */
     color: var(--gray-darker);
     font: var(--regular-18px);
     line-height: 1.8;
 }
 
 #Contact .contact-mail {
+    /* layout */
     align-items: center;
     text-align: center;
 }
 
 #Contact .contact-mail .flat-button {
+    /* layout */
     display: flex;
-    margin-top: 14px;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    /* boxmodel */
+    margin-top: 14px;
     padding: 14px 25px;
     width: fit-content;
+    /* visual */
     font: var(--regular-16px);
     color: var(--white);
-    text-align: center;
 }
 
 #Contact .contact-mail .flat-button:hover {
+    /* visual */
     background-color: var(--steelblue);
 }
 
 @media screen and (max-width: 768px) {
     #Contact {
-        padding: 0 16px 80px;
+        /* layout */
         gap: 24px;
+        /* boxmodel */
+        padding: 0 16px 80px;
     }
 
     #Contact .Office,
     #Contact .contact-mail {
+        /* boxmodel */
         padding: 28px;
     }
 
     #Contact .Office iframe {
+        /* boxmodel */
         min-height: 280px;
     }
 
     #Contact .Office h3,
     #Contact .contact-mail h3 {
+        /* visual */
         font: var(--bold-24px);
     }
 }
