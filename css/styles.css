@@ -80,6 +80,14 @@
   opacity: 0.8;
 }
 
+.site-menu .current {
+  background: #2f5596;
+}
+
+.site-menu .current:hover {
+  opacity: 0.9;
+}
+
 .toggle-menu-button {
   display: none;
 }

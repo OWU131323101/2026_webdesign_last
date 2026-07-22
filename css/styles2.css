@@ -4,7 +4,7 @@
 ======================*/
 .main2 {
   /* boxmodel */
-    padding-top: 200px;
+    padding-top: 100px;
 }
 
 /* =====================
@@ -163,5 +163,81 @@
 
     .work-title {
         font-size: 1.5rem;
+    }
+}
+
+/* =======================
+   Contact
+======================= */
+#Contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 80px 20px 120px;
+    gap: 40px;
+}
+
+#Contact .Office,
+#Contact .contact-mail {
+    width: 100%;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(70, 130, 180, 0.12);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+#Contact .Office iframe {
+    width: 100%;
+    min-height: 360px;
+    border: 1px solid #d8d8d8;
+    border-radius: 16px;
+}
+
+#Contact .Office h3,
+#Contact .contact-mail h3 {
+    font: var(--bold-32px);
+    color: var(--black);
+}
+
+#Contact .Office p,
+#Contact .contact-mail p {
+    font: var(--regular-18px);
+    color: #333333;
+    line-height: 1.8;
+}
+
+#Contact .contact-mail {
+    align-items: center;
+    text-align: center;
+}
+
+#Contact .contact-mail .flat-button {
+    margin-top: 16px;
+}
+
+@media screen and (max-width: 768px) {
+    #Contact {
+        padding: 60px 16px 80px;
+        gap: 24px;
+    }
+
+    #Contact .Office,
+    #Contact .contact-mail {
+        padding: 28px;
+    }
+
+    #Contact .Office iframe {
+        min-height: 280px;
+    }
+
+    #Contact .Office h3,
+    #Contact .contact-mail h3 {
+        font: var(--bold-24px);
     }
 }
