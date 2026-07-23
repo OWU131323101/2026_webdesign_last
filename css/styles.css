@@ -133,21 +133,46 @@
 
 /* スマホ用 */
 @media screen and (max-width: 768px) {
+  .header-site-menu {
+    /* layout */
+    justify-content: space-between;
+    gap: 0;
+    /* boxmodel */
+    padding: 16px 5vw;
+  }
+
+  .header-logo {
+    /* boxmodel */
+    margin-right: 0;
+  }
+
+  .header-logo img {
+    /* boxmodel */
+    max-width: 60vw;
+    height: auto;
+  }
+
   .toggle-menu-button {
     /* layout */
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     /* boxmodel */
-    width: 63px;
-    height: 62px;
-    border: none;
+    width: 58px;
+    height: 58px;
+    padding: 0;
     border: none;
     /* visual */
     background: none;
     cursor: pointer;
-    background-image: url("../images/Vecter.png");
-    background-position: center;
-    background-repeat: no-repeat;
     outline: none;
+  }
+
+  .toggle-menu-button img {
+    /* boxmodel */
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 
   .site-menu {
